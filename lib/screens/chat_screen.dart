@@ -53,9 +53,9 @@ class _ChatScreenState extends State<ChatScreen> {
         elevation: 2,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsManager.openaiLogo),
+          child: Image.asset(AssetsManager.nflLogo),
         ),
-        title: const Text("ChatGPT"),
+        title: const Text("NFL Sideline Chatbot"),
         actions: [
           IconButton(
             onPressed: () async {
@@ -107,7 +107,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               chatProvider: chatProvider);
                         },
                         decoration: const InputDecoration.collapsed(
-                            hintText: "How can I help you",
+                            hintText: "Begin typing here",
                             hintStyle: TextStyle(color: Colors.grey)),
                       ),
                     ),

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter ChatBOT',
+        title: 'NFL Sideline Chatbot',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             scaffoldBackgroundColor: scaffoldBackgroundColor,
