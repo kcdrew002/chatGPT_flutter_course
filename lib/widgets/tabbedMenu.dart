@@ -1,5 +1,7 @@
 // Tabbed Menu Widget
 
+import 'package:chatgpt_course/screens/chat_screen.dart';
+import 'package:chatgpt_course/screens/sideline_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabbedMenu extends StatefulWidget {
@@ -83,6 +85,9 @@ class _TabbedMenuState extends State<TabbedMenu> {
               setState(() {
                 widget.selectedIndex = 3;
               });
+              print("Selected Sideline tab");
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const SidelineScreen()));
             },
             child: Text(
               'Sideline',

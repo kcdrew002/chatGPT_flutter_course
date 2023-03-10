@@ -71,6 +71,10 @@ flutter:
     - assets/images/logo3.png
     - assets/images/chatUser.png
     - assets/images/nflplus.svg
+    - assets/images/QR.png
+    - assets/images/chat_bubble.png
+    - assets/images/Voice_Ai.png
+    - assets/videos/Dak_Prescott.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

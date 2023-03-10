@@ -1,5 +1,6 @@
 // Base screen for tab based navigation within NFL plus
 
+import 'package:chatgpt_course/screens/sideline_screen.dart';
 import 'package:chatgpt_course/widgets/tabbedMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:chatgpt_course/services/assets_manager.dart';
@@ -17,15 +18,20 @@ class _BaseScreenState extends State<BaseScreen> {
   int _selectedIndex = 2;
   final pages = [];
   late VideoPlayerController _controler;
+  late Future<void> _init;
 
   @override
   void initState() {
     super.initState();
-    _controler = VideoPlayerController.network(
-        'https://www.youtube.com/watch?v=2y2fi-Qkn0g')
-      ..initialize().then((_) {
-        setState(() {});
-      });
+    _controler = VideoPlayerController.asset('assets/videos/Dak_Prescott.mp4');
+    _init = _controler.initialize();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // mutes the video
+      _controler.setVolume(0);
+      // Plays the video once the widget is build and loaded.
+      _controler.setLooping(true);
+      _controler.play();
+    });
   }
 
   @override
@@ -56,17 +62,26 @@ class _BaseScreenState extends State<BaseScreen> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
-              child: _controler.value.isInitialized
-                  ? VideoPlayer(_controler)
-                  : CircularProgressIndicator(
-                      color: Theme.of(context).secondaryHeaderColor,
-                      backgroundColor: Theme.of(context).focusColor,
-                    ),
+              child: FutureBuilder(
+                future: _init,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return AspectRatio(
+                        aspectRatio: _controler.value.aspectRatio,
+                        child: VideoPlayer(_controler));
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
             ),
           ),
           Container(
             child: TabbedMenu(selectedIndex: 2),
-          )
+          ),
+          const SidelineScreen(),
         ],
       ),
       bottomNavigationBar: Container(
