@@ -40,10 +40,21 @@ class _SidelineScreenState extends State<SidelineScreen> {
                 const Spacer(),
                 ElevatedButton(
                   style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50))),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).focusColor),
+                      elevation: MaterialStateProperty.all<double>(10.0),
+                      shadowColor: MaterialStateProperty.all<Color>(
+                          Theme.of(context).secondaryHeaderColor),
                       foregroundColor:
                           MaterialStateProperty.all<Color>(unselectedColor)),
                   onPressed: () {},
-                  child: const Text("Join the sidelines"),
+                  child: const Text(
+                    "Join the sidelines",
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ),
                 const Spacer(),
                 GestureDetector(
@@ -57,10 +68,12 @@ class _SidelineScreenState extends State<SidelineScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(
+                bottom: 8.0, top: 15.0, left: 8.0, right: 8.0),
             child: Container(
-              height: MediaQuery.of(context).size.height / 2.26,
+              // height: MediaQuery.of(context).size.height / 2.265,
               child: ListView(
+                shrinkWrap: true,
                 children: [
                   Card(
                     shape: RoundedRectangleBorder(
@@ -74,16 +87,14 @@ class _SidelineScreenState extends State<SidelineScreen> {
                       ),
                       tileColor: Theme.of(context).focusColor,
                       contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
+                      title: const Text("I-Formation",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
+                              color: Colors.grey,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
+                      subtitle: const Text(
+                          "I-formation is a formation where the quarterback lines up directly behind the center, and the running back lines up directly behind the quarterback. There are two additional...",
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
                     ),
                   ),
                   Card(
@@ -98,16 +109,14 @@ class _SidelineScreenState extends State<SidelineScreen> {
                       ),
                       tileColor: Theme.of(context).focusColor,
                       contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
+                      title: const Text("Onside Kick",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
+                              color: Colors.grey,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
+                      subtitle: const Text(
+                          "An onside kick in the NFL is a type of kickoff where the kicking team intentionally kicks the ball only a short distance in an attempt to immediately regain...",
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
                     ),
                   ),
                   Card(
@@ -122,112 +131,14 @@ class _SidelineScreenState extends State<SidelineScreen> {
                       ),
                       tileColor: Theme.of(context).focusColor,
                       contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
+                      title: const Text("Dime",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
+                              color: Colors.grey,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    elevation: 10,
-                    shadowColor: Theme.of(context).secondaryHeaderColor,
-                    child: ListTile(
-                      trailing: const Padding(
-                        padding: EdgeInsets.only(right: 5),
-                      ),
-                      tileColor: Theme.of(context).focusColor,
-                      contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    elevation: 10,
-                    shadowColor: Theme.of(context).secondaryHeaderColor,
-                    child: ListTile(
-                      trailing: const Padding(
-                        padding: EdgeInsets.only(right: 5),
-                      ),
-                      tileColor: Theme.of(context).focusColor,
-                      contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    elevation: 10,
-                    shadowColor: Theme.of(context).secondaryHeaderColor,
-                    child: ListTile(
-                      trailing: const Padding(
-                        padding: EdgeInsets.only(right: 5),
-                      ),
-                      tileColor: Theme.of(context).focusColor,
-                      contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
-                    ),
-                  ),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    elevation: 10,
-                    shadowColor: Theme.of(context).secondaryHeaderColor,
-                    child: ListTile(
-                      trailing: const Padding(
-                        padding: EdgeInsets.only(right: 5),
-                      ),
-                      tileColor: Theme.of(context).focusColor,
-                      contentPadding: const EdgeInsets.all(10),
-                      leading: const CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: const Text("Nick Bosa",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold)),
-                      subtitle: const Text("DE - San Francisco 49ers",
-                          style: TextStyle(color: Colors.white, fontSize: 15)),
+                      subtitle: const Text(
+                          "In American football, a \"dime\" refers to a defensive package that entails six defensive backs, usually comprising four cornerbacks and two safeties...",
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
                     ),
                   ),
                 ],
